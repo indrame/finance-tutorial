@@ -20,17 +20,18 @@ const app = new Hono()
         async (c) => {
             const auth = getAuth(c);
             const { from, to, accountId } = c.req.valid("query");
-
+            
             if(!auth?.userId) {
                 return c.json({ error: "Unauthorized" }, 401);
             }
-
+            
             const defaultTo = new Date();
             const defaultFrom = subDays(defaultTo, 30);
 
             const startDate = from ? parse(from, "yyyy-MM-dd", new Date()) : defaultFrom;
             const endDate = to ? parse(to, "yyyy-MM-dd", new Date()) : defaultTo;
 
+            console.log({ startDate, endDate });
             const data = await db
                 .select({
                     id: transactions.id,
