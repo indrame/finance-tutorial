@@ -8,10 +8,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <>
       <Header />
-      <div>
-        <h1>Dashboard Layout</h1>
-        {children}
-      </div>
+      <div className="px-3 lg:px-14">{children}</div>
     </>
   );
 };

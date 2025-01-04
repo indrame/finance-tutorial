@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1735610610144,
+      "tag": "0000_silent_blue_blade",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1735640396536,
+      "tag": "0001_crazy_james_howlett",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1735962323740,
+      "tag": "0002_easy_hawkeye",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1735968866553,
+      "tag": "0003_parallel_norman_osborn",
+      "breakpoints": true
+    }
+  ]
+}
