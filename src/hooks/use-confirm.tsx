@@ -18,13 +18,13 @@ export const useConfirm = (
   } | null>(null);
 
   const confim = () =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
       setPromise({ resolve });
     });
 
-  const handleClose = () => {
-    setPromise(null);
-  };
+  // const handleClose = () => {
+  //   setPromise(null);
+  // };
 
   const handleConfirm = () => {
     promise?.resolve(true);

@@ -32,13 +32,9 @@ export const useSelectAccount = (): [
   const selectValue = useRef<string>();
 
   const confim = () =>
-    new Promise((resolve, reject) => {
+    new Promise((resolve) => {
       setPromise({ resolve });
     });
-
-  const handleClose = () => {
-    setPromise(null);
-  };
 
   const handleConfirm = () => {
     promise?.resolve(selectValue.current);

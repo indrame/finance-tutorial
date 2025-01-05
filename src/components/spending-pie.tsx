@@ -1,17 +1,5 @@
-import {
-  AreaChart,
-  BarChart3,
-  FileSearch,
-  LineChart,
-  Loader2,
-  PieChart,
-  Radar,
-  Target,
-} from "lucide-react";
+import { FileSearch, Loader2, PieChart, Radar, Target } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { AreaVariant } from "./area-variant";
-import { BarVariant } from "./bar-variant";
-import { LineVariant } from "./line-variant";
 import { useState } from "react";
 import { Select, SelectContent, SelectItem, SelectValue } from "./ui/select";
 import { SelectTrigger } from "@radix-ui/react-select";

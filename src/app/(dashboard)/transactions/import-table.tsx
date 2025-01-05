@@ -6,7 +6,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { index } from "drizzle-orm/mysql-core";
 import { TableHeadSelect } from "./table-head-select";
 
 type Props = {

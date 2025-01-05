@@ -20,8 +20,6 @@ type Props = {
 };
 
 export const DatePicker = ({ value, onChange, disabled }: Props) => {
-  const formattedValue = value ? format(value, "MMM d, yyyy") : "Select a date";
-
   return (
     <Popover>
       <PopoverTrigger asChild>
