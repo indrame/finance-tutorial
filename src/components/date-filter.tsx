@@ -6,9 +6,10 @@ import { DateRange } from "react-day-picker";
 import { ChevronDown } from "lucide-react";
 
 import qs from "query-string";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { formatDateRange } from "@/lib/utils";
+import { useSearchParam } from "react-use";
 
 import {
   Popover,
@@ -23,10 +24,9 @@ export const DateFilter = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const params = useSearchParams();
-  const accountId = params.get("accountId");
-  const from = params.get("from") || "";
-  const to = params.get("to") || "";
+  const accountId = useSearchParam("accountId");
+  const from = useSearchParam("from") || "";
+  const to = useSearchParam("to") || "";
 
   const defaultTo = new Date();
   const defaultFrom = subDays(defaultTo, 30);

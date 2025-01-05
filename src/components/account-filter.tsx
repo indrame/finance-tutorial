@@ -9,17 +9,17 @@ import {
   SelectValue,
 } from "./ui/select";
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useGetSummary } from "@/features/summary/api/use-get-summary";
+import { useSearchParam } from "react-use";
 
 export const AccountFilter = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const params = useSearchParams();
-  const accountId = params.get("accountId") || "all";
-  const from = params.get("from") || "";
-  const to = params.get("to") || "";
+  const accountId = useSearchParam("accountId") || "all";
+  const from = useSearchParam("from") || "";
+  const to = useSearchParam("to") || "";
 
   const { isLoading: isLoadingSummary } = useGetSummary();
   const { data: accounts, isLoading: isLoadingAccounts } = useGetAccounts();

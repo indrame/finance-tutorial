@@ -15,7 +15,7 @@ type Props = {
     value: number;
   }[];
 };
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const RadialVariant = ({ data = [] }: Props) => {
   return (
     <ResponsiveContainer width="100%" height={350}>
@@ -75,3 +75,4 @@ export const RadialVariant = ({ data = [] }: Props) => {
     </ResponsiveContainer>
   );
 };
+/* eslint-disable @typescript-eslint/no-explicit-any */

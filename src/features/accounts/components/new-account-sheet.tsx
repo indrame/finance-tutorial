@@ -11,9 +11,11 @@ import { insertAccountSchema } from "@/db/schema";
 import { z } from "zod";
 import { useCreateAccount } from "../api/use-create-account";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const formSchema = insertAccountSchema.pick({
   name: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 

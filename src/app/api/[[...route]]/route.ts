@@ -9,11 +9,13 @@ export const runtime = "edge";
 
 const app = new Hono().basePath('/api');
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const routes = app
   .route("/summary", summary)
   .route("/accounts", accounts)
   .route("/categories", categories)
   .route("/transactions", transactions)
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 export const GET = handle(app);
 export const POST = handle(app);

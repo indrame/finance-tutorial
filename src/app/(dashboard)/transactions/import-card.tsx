@@ -75,8 +75,8 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
         .filter((row) => row.length > 0),
     };
 
+    /* eslint-disable @typescript-eslint/no-explicit-any */
     const arrayOfData = mappedData.body.map((row) => {
-      // eslint-disable-line @typescript-eslint/no-explicit-any
       return row.reduce((acc: any, cell, index) => {
         const header = mappedData.headers[index];
         if (header !== null) {
@@ -86,6 +86,7 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
         return acc;
       }, {});
     });
+    /* eslint-disable @typescript-eslint/no-explicit-any */
 
     const formaatedData = arrayOfData.map((item) => {
       return {

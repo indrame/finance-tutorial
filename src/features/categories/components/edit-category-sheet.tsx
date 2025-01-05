@@ -15,9 +15,11 @@ import { useDeleteCategory } from "../api/use-delete-category";
 import { useConfirm } from "@/hooks/use-confirm";
 import { insertCategorySchema } from "@/db/schema";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const formSchema = insertCategorySchema.pick({
   name: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 

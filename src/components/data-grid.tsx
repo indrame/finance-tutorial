@@ -2,16 +2,15 @@
 
 import { useGetSummary } from "@/features/summary/api/use-get-summary";
 import { formatDateRange } from "@/lib/utils";
-import { useSearchParams } from "next/navigation";
 import { FaPiggyBank } from "react-icons/fa";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 import { DataCard, DataCardLoading } from "./data-card";
+import { useSearchParam } from "react-use";
 
 export const DataGrid = () => {
   const { data, isLoading } = useGetSummary();
-  const params = useSearchParams();
-  const to = params.get("to") || "";
-  const from = params.get("from") || "";
+  const to = useSearchParam("to") || "";
+  const from = useSearchParam("from") || "";
 
   const dateRangeLabel = formatDateRange({ from, to });
 

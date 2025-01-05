@@ -19,9 +19,11 @@ import { useCreateCategory } from "@/features/categories/api/use-create-category
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 import { useCreateAccount } from "@/features/accounts/api/use-create-account";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const formSchema = insertTransactionSchema.omit({
   id: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 

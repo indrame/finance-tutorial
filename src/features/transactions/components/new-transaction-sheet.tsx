@@ -16,9 +16,11 @@ import { useCreateAccount } from "@/features/accounts/api/use-create-account";
 import { TransactionForm } from "./transaction-form";
 import { Loader2 } from "lucide-react";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const formSchema = insertTransactionSchema.omit({
   id: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 

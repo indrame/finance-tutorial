@@ -11,9 +11,11 @@ import { z } from "zod";
 import { useCreateCategory } from "../api/use-create-category";
 import { useNewCategory } from "../hooks/use-new-category";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const formSchema = insertCategorySchema.pick({
   name: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 

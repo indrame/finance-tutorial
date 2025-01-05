@@ -15,9 +15,11 @@ import { useEditAccount } from "../api/use-edit-account";
 import { useDeleteAccount } from "../api/use-delete-account";
 import { useConfirm } from "@/hooks/use-confirm";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const formSchema = insertAccountSchema.pick({
   name: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 

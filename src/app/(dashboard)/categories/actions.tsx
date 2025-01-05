@@ -25,7 +25,6 @@ export const Actions = ({ id }: Props) => {
   );
 
   const handleDelete = async () => {
-    console.log("yes");
     const ok = await confirm();
     if (ok) {
       deleteMutation.mutate();

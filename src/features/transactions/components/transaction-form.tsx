@@ -27,9 +27,11 @@ const formSchema = z.object({
   notes: z.string().nullable().optional(),
 });
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 const apiSchema = insertTransactionSchema.omit({
   id: true,
 });
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 type FormValues = z.input<typeof formSchema>;
 type ApiFormValues = z.input<typeof apiSchema>;

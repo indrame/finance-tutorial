@@ -3,6 +3,7 @@ import { format } from "date-fns";
 import { formatCurrency } from "@/lib/utils";
 import { Separator } from "./ui/separator";
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const CustomTooltip = ({ active, payload }: any) => {
   if (!active) return null;
 
@@ -39,3 +40,4 @@ export const CustomTooltip = ({ active, payload }: any) => {
     </div>
   );
 };
+/* eslint-disable @typescript-eslint/no-explicit-any */
