@@ -76,8 +76,8 @@ export const ImportCard = ({ data, onCancel, onSubmit }: Props) => {
     };
 
     const arrayOfData = mappedData.body.map((row) => {
+      // eslint-disable-line @typescript-eslint/no-explicit-any
       return row.reduce((acc: any, cell, index) => {
-        // eslint-disable-line @typescript-eslint/no-explicit-any
         const header = mappedData.headers[index];
         if (header !== null) {
           acc[header] = cell;
