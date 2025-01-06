@@ -11,15 +11,16 @@ import {
 import { useGetAccounts } from "@/features/accounts/api/use-get-accounts";
 import { usePathname, useRouter } from "next/navigation";
 import { useGetSummary } from "@/features/summary/api/use-get-summary";
-import { useSearchParam } from "react-use";
+import { useSearchParams } from "next/navigation";
 
 export const AccountFilter = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const accountId = useSearchParam("accountId") || "all";
-  const from = useSearchParam("from") || "";
-  const to = useSearchParam("to") || "";
+  const params = useSearchParams();
+  const accountId = params.get("accountId") || "all";
+  const from = params.get("from") || "";
+  const to = params.get("to") || "";
 
   const { isLoading: isLoadingSummary } = useGetSummary();
   const { data: accounts, isLoading: isLoadingAccounts } = useGetAccounts();
@@ -43,6 +44,7 @@ export const AccountFilter = () => {
       { skipEmptyString: true, skipNull: true }
     );
 
+    console.log("router push");
     router.push(url);
   };
   return (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { use, useState } from "react";
 import { format, subDays } from "date-fns";
 import { DateRange } from "react-day-picker";
 import { ChevronDown } from "lucide-react";
@@ -9,7 +9,7 @@ import qs from "query-string";
 import { usePathname, useRouter } from "next/navigation";
 
 import { formatDateRange } from "@/lib/utils";
-import { useSearchParam } from "react-use";
+import { useSearchParams } from "next/navigation";
 
 import {
   Popover,
@@ -23,10 +23,11 @@ import { Calendar } from "./ui/calendar";
 export const DateFilter = () => {
   const router = useRouter();
   const pathname = usePathname();
+  const params = useSearchParams();
 
-  const accountId = useSearchParam("accountId");
-  const from = useSearchParam("from") || "";
-  const to = useSearchParam("to") || "";
+  const accountId = params.get("accountId");
+  const from = params.get("from") || "";
+  const to = params.get("to") || "";
 
   const defaultTo = new Date();
   const defaultFrom = subDays(defaultTo, 30);

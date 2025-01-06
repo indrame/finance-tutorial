@@ -5,12 +5,13 @@ import { formatDateRange } from "@/lib/utils";
 import { FaPiggyBank } from "react-icons/fa";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 import { DataCard, DataCardLoading } from "./data-card";
-import { useSearchParam } from "react-use";
+import { useSearchParams } from "next/navigation";
 
 export const DataGrid = () => {
+  const params = useSearchParams();
   const { data, isLoading } = useGetSummary();
-  const to = useSearchParam("to") || "";
-  const from = useSearchParam("from") || "";
+  const to = params.get("to") || "";
+  const from = params.get("from") || "";
 
   const dateRangeLabel = formatDateRange({ from, to });
 
